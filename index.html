@@ -5,7 +5,6 @@
 <title>Elite Signal Dashboard</title>
 
 <style>
-
 body{
 font-family: Arial, sans-serif;
 background:#f4f6fb;
@@ -117,6 +116,7 @@ let message =
 
 let token="8455897411:AAGdiajpZSQkXOJgs6RWvKj01Hel-b5SmAA";
 let chat_id="-1003889484238";
+let thread_id=2; // Elite Trade Setups topic
 
 let url="https://api.telegram.org/bot"+token+"/sendMessage";
 
@@ -127,6 +127,7 @@ headers:{
 },
 body:JSON.stringify({
 chat_id:chat_id,
+message_thread_id:thread_id,
 text:message
 })
 })
@@ -136,7 +137,7 @@ text:message
 console.log(data);
 
 if(data.ok){
-document.getElementById("status").innerHTML="✅ Signal Sent to Telegram!";
+document.getElementById("status").innerHTML="✅ Signal Sent to Elite Trade Setups!";
 }else{
 document.getElementById("status").innerHTML="❌ Failed to send signal";
 }
